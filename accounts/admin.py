@@ -5,4 +5,11 @@ from .models import *
 # Register your models here.
 admin.site.register(Customer)
 admin.site.register(Product)
-admin.site.register(Order)
+
+class OrderShow(admin.ModelAdmin):
+    list_display = ['productName','orderedBy']
+    class Meta:
+        model = Order
+
+admin.site.register(Order, OrderShow)
+admin.site.register(Tag)
