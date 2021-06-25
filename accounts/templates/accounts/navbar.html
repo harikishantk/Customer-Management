@@ -4,12 +4,21 @@
 <style>
   .hello-msg{
     font-size: 18px;
-    color: #fff;
+    color: #000;
     margin-right: 20px;
   }
+
+  .hello-msg:hover{
+    background-color: beige;
+  }
+
+  .nav-item:hover{
+    background-color: beige;
+  }
+
 </style>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-light">
  <img src="{% static 'images/logo.png' %}" height="60px" width="164px">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -17,15 +26,15 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="{% url 'home' %}">Dashboard</a>
+        <a class="nav-link" href="{% url 'home' %}" style="color:black;">Dashboard</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'products' %}">Products</a>
+        <a class="nav-link" href="{% url 'products' %}" style="color:black;">Products</a>
       </li>
     </ul>
   </div>
 
   <span class="hello-msg">Hello, {{request.user}}</span>
-  <span ><a  class="hello-msg" href="{% url 'logout' %}">Logout</a></span>
+  <span ><a  class="hello-msg" href="{% url 'logout' %}" style="color:black;">Logout</a></span>
 
 </nav>
