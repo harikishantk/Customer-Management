@@ -19,18 +19,20 @@
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-light">
- <img src="{% static 'images/logo.png' %}" height="60px" width="164px">
+ <img src="{% static 'images/logo.png' %}" href="{% url 'home' %}" height="60px" width="164px">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
+      {% if request.user.is_staff %}
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'home' %}" style="color:black;">Dashboard</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{% url 'products' %}" style="color:black;">Products</a>
       </li>
+      {% endif %}
     </ul>
   </div>
 
